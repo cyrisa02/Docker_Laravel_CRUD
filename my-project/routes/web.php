@@ -29,3 +29,8 @@ Auth::routes();
 Route::get('/newtech', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get("/etudiant", [EtudiantController::class,"index"])->name("etudiant");
+Route::get("/etudiant/create", [EtudiantController::class,"create"])->name("etudiant.create");
+
+Route::post("/etudiant/create", [EtudiantController::class,"store"])->name("etudiant.ajouter");
+
+Route::delete("/etudiant/{etudiant}", [EtudiantController::class,"delete"])->name("etudiant.supprimer");
