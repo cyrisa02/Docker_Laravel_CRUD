@@ -33,7 +33,8 @@
                             <td>{{ $etudiant->prenom }}</td>
                             <td>{{ $etudiant->classe->libelle }}</td>
                             <td>
-                                <a href="#" class="btn btn-info">Edition</a>
+                                <a href="{{ route('etudiant.edit', ['etudiant' => $etudiant->id]) }}"
+                                    class="btn btn-info">Edition</a>
                                 <a href="#" class="btn btn-danger"
                                     onclick="if(confirm('Voulez-vous vraiment supprimer cet étudiant?')){document.getElementById('form-{{ $etudiant->id }}').submit()}">Supprimer</a>
                                 <form id="form-{{ $etudiant->id }} "
